@@ -1,0 +1,70 @@
+--- 
+- name: Add SNMP device to LibreNMS
+  block:
+  - name: Add device to LibreNMS - SNMP V3
+    delegate_to: localhost
+    tags: create
+    uri:
+      url: http://{{LIBRENMS_HOST}}/api/v0/devices
+      headers:
+        X-Auth-Token: "{{LIBRE_REST_APITOKEN}}"
+      method: POST
+      body_format: json
+      body:
+        hostname: "{{ansible_host}}"
+        snmpver: "{{SNMP_VER}}"
+        authlevel: "{{SNMP_AUTHLEVEL}}"
+        authname: "{{SNMP_USER}}"
+        authpass: "{{SNMP_AUTH_PASS}}"
+        authalgo: "{{SNMP_AUTHALGO}}"
+        cryptopass: "{{SNMP_ENCRYPT_PASS}}"
+        cryptoalgo: "{{SNMP_CRYPTOALGO}}"
+        force_add: "{{LIBRENMS_FORCE_ADD}}"
+    when:
+      - LIBRENMS_DEVICE_STATE is defined
+      - LIBRENMS_DEVICE_STATE == 'present'
+      - SNMP_VER is defined
+      - SNMP_VER == 'v3'
+      - LIBRENMS_FORCE_ADD is defined
+
+  - name: Add device to LibreNMS - SNMP V2c
+    delegate_to: localhost
+    tags: create
+    uri:
+      url: http://{{LIBRENMS_HOST}}/api/v0/devices
+      headers:
+        X-Auth-Token: "{{LIBRE_REST_APITOKEN}}"
+      method: POST
+      body_format: json
+      body:
+        hostname: "{{ansible_host}}"
+        snmpver: "{{SNMP_VER}}"
+        community: "{{SNMP_COMMUNITY}}"
+        force_add: "{{LIBRENMS_FORCE_ADD}}"
+    when:
+    - "LIBRENMS_DEVICE_STATE is defined"
+    - "LIBRENMS_DEVICE_STATE == 'present'"
+    - "SNMP_VER is defined"
+    - "SNMP_VER == 'v2c'"
+    - "LIBRENMS_FORCE_ADD is defined"
+
+  - name: Add device to LibreNMS - Ping
+    delegate_to: localhost
+    tags: create
+    uri:
+      url: http://{{LIBRENMS_HOST}}/api/v0/devices
+      headers:
+        X-Auth-Token: "{{LIBRE_REST_APITOKEN}}"
+      method: POST
+      body_format: json
+      body:
+        hostname: "{{ansible_host}}"
+        snmp_disable: true
+        force_add: "{{LIBRENMS_FORCE_ADD}}"
+    when:
+    - "LIBRENMS_DEVICE_STATE is defined"
+    - "LIBRENMS_DEVICE_STATE == 'present'"
+    - "LIBRENMS_PING_ONLY == 'true'"
+    - "LIBRENMS_FORCE_ADD is defined"
+  when:
+    - LIBRENMS_DEVICE_CHECK.status == 404

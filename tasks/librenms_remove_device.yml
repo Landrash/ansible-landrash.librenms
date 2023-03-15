@@ -1,0 +1,18 @@
+--- 
+- name: Remove device from LibreNMS
+  block:
+  - name: Remove device from LibreNMS
+    delegate_to: localhost
+    tags: remove
+    uri:
+        url: http://{{LIBRENMS_HOST}}/api/v0/devices/{{ansible_host}}
+        headers:
+          X-Auth-Token: "{{LIBRE_REST_APITOKEN}}"
+        method: DELETE
+        status_code:
+            - 200
+            - 400
+  when:
+    - LIBRENMS_DEVICE_CHECK.status == 200
+    - LIBRENMS_DEVICE_STATE == 'absent'
+

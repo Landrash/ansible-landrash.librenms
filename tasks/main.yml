@@ -1,0 +1,9 @@
+---
+- name: Check device
+  ansible.builtin.import_tasks: "librenms_check_device.yml"
+
+- name: Remove device
+  ansible.builtin.import_tasks: "librenms_remove_device.yml"
+
+- name: Add device
+  ansible.builtin.import_tasks: "librenms_add_device.yml"
