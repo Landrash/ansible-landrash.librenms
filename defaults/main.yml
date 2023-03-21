@@ -12,7 +12,7 @@ SNMP_COMMUNITY: 'librenms'
 ## V3
 SNMP_AUTHLEVEL: 'authPriv'
 SNMP_AUTHALGO: 'sha'
-SNMP_AUTHPASS: 'librenms'
+SNMP_AUTH_PASS: 'librenms'
 SNMP_CRYPTOALGO: 'aes'
 SNMP_ENCRYPT_PASS: 'librenms'
 
