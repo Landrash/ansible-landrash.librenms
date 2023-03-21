@@ -15,7 +15,7 @@
         snmpver: "{{SNMP_VER}}"
         authlevel: "{{SNMP_AUTHLEVEL}}"
         authname: "{{SNMP_USER}}"
-        authpass: "{{SNMP_AUTH_PASS}}"
+        authpass: "{{SNMP_AUTHPASS}}"
         authalgo: "{{SNMP_AUTHALGO}}"
         cryptopass: "{{SNMP_ENCRYPT_PASS}}"
         cryptoalgo: "{{SNMP_CRYPTOALGO}}"
