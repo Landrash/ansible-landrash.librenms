@@ -1,4 +1,4 @@
---- 
+---
 - name: Add SNMP device to LibreNMS
   block:
   - name: Add device to LibreNMS - SNMP V3
