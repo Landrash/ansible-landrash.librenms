@@ -21,16 +21,3 @@ LIBRENMS_PING_ONLY: false
 
 ## Optional
 LIBRENMS_FORCE_ADD: false
-
-# check
-# 
-# absent == del
-# 
-# present == block / add
-#     v3 == add / break 
-#         force == force
-#     v2
-#         force == force
-#     ping 
-#         force == force
-# check
