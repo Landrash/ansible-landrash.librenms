@@ -1,2 +1,9 @@
 ---
+galaxy_info:
+  role_name: librenms
+  author: landrash
+  description: Add and remove devices to LibreNMS
+
+  license: license MIT
+
 dependencies: []
