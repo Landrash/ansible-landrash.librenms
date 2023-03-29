@@ -3,7 +3,19 @@ galaxy_info:
   role_name: librenms
   author: landrash
   description: Add and remove devices to LibreNMS
-
+  min_ansible_version: '7.0'
   license: license MIT
-
+  platforms:
+    - name: Fedora
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+  galaxy_tags:
+    - librenms
+    - networking
 dependencies: []

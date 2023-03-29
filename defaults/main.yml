@@ -1,23 +1,23 @@
 ---
 ### Default variables
-LIBRE_REST_APITOKEN: 'setme!'
-LIBRENMS_HOST: 'librenms'
-LIBRENMS_DEVICE_STATE: present
-SNMP_VER: '3'
-SNMP_USER: 'librenms'
-LIBRENMS_DEVICE_CHECK: 'unknown'
+libre_rest_apitoken: 'setme!'
+librenms_host: 'librenms'
+librenms_device_state: present
+snmp_version: '3'
+snmp_user: 'librenms'
+librenms_device_check: 'unknown'
 
 ## V2c
-SNMP_COMMUNITY: 'librenms'
+snmp_community: 'librenms'
 ## V3
-SNMP_AUTHLEVEL: 'authPriv'
-SNMP_AUTHALGO: 'sha'
-SNMP_AUTHPASS: 'librenms'
-SNMP_CRYPTOALGO: 'aes'
-SNMP_ENCRYPT_PASS: 'librenms'
+snmp_authlevel: 'authPriv'
+snmp_authalgorithm: 'sha'
+snmp_auth_password: 'librenms'
+snmp_crypto_algorithn: 'aes'
+snmp_encrypt_password: 'librenms'
 
 ## Ping
-LIBRENMS_PING_ONLY: false
+librenms_ping_only: false
 
 ## Optional
-LIBRENMS_FORCE_ADD: false
+librenms_force_add: false
