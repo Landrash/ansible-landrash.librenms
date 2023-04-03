@@ -1,9 +1,9 @@
 ---
 ### Default variables
-libre_rest_apitoken: 'setme!'
+librenms_rest_apitoken: 'setme!'
 librenms_host: 'librenms'
 librenms_device_state: present
-snmp_version: '3'
+snmp_version: 'v3'
 snmp_user: 'librenms'
 librenms_device_check: 'unknown'
 

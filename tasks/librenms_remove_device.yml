@@ -10,7 +10,7 @@
       ansible.builtin.uri:
         url: http://{{ librenms_host }}/api/v0/devices/{{ ansible_host }}
         headers:
-          X-Auth-Token: "{{ libre_rest_apitoken }}"
+          X-Auth-Token: "{{ librenms_rest_apitoken }}"
         method: DELETE
         status_code:
           - 200
