@@ -20,7 +20,7 @@
           authpass: "{{ snmp_auth_password }}"
           authalgo: "{{ snmp_authalgorithm }}"
           cryptopass: "{{ snmp_encrypt_password }}"
-          cryptoalgo: "{{ snmp_crypto_algorithn }}"
+          cryptoalgo: "{{ snmp_crypto_algorithm }}"
           force_add: "{{ librenms_force_add }}"
       when:
         - librenms_device_state is defined

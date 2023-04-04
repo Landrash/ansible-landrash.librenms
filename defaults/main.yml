@@ -13,7 +13,7 @@ snmp_community: 'librenms'
 snmp_authlevel: 'authPriv'
 snmp_authalgorithm: 'sha'
 snmp_auth_password: 'librenms'
-snmp_crypto_algorithn: 'aes'
+snmp_crypto_algorithm: 'aes'
 snmp_encrypt_password: 'librenms'
 
 ## Ping
